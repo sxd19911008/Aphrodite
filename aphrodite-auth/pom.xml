@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.aphrodite</groupId>
+        <artifactId>aphrodite</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>aphrodite-auth</artifactId>
+    <packaging>jar</packaging>
+
+    <name>aphrodite-auth</name>
+    <description>认证授权服务模块</description>
+
+    <dependencies>
+        <!-- 公共安全鉴权模块 -->
+        <dependency>
+            <groupId>com.aphrodite</groupId>
+            <artifactId>aphrodite-common-security</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+         <!-- 微服务公共模块 -->
+        <dependency>
+            <groupId>com.aphrodite</groupId>
+            <artifactId>aphrodite-common-web</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

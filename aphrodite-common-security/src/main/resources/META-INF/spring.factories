@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.aphrodite.security.config.SaTokenConfig,\
+com.aphrodite.security.config.SaTokenRedisConfig,\
+com.aphrodite.security.exception.SecurityExceptionHandler
+
+
+

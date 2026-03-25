@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: @profiles.active@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: @nacos.server.addr@
+        namespace: @nacos.namespace@
+      config:
+        server-addr: @nacos.server.addr@
+        namespace: @nacos.namespace@
+        file-extension: yml

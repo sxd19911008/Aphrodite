@@ -1,0 +1,15 @@
+server:
+  port: 9003
+
+aphrodite:
+  datasource:
+    mysql:
+      jdbc-url: jdbc:mysql://localhost:3306/aphrodite_insurance?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    oracle:
+      jdbc-url: jdbc:oracle:thin:@localhost:1521/FREEPDB1 # 注意：Oracle 23ai 默认服务名通常是 FREE 或 FREEPDB1
+      username: system # 注意：通常不用 root，Oracle 默认管理用户是 system 或 sys
+      password: 123456
+      driver-class-name: oracle.jdbc.OracleDriver

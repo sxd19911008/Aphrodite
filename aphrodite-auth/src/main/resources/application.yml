@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: aphrodite-auth
+  config:
+    import:
+      # 导入公共模块的配置文件
+      - classpath:application-common.yml
+      # 拉取 nacos 中的公共配置文件
+      - optional:nacos:common.yml
+      - optional:nacos:common-security.yml
+      # 拉取 nacos 中的配置文件。
+      - optional:nacos:${spring.application.name}.yml
