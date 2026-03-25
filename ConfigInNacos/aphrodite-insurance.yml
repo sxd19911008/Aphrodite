@@ -1,15 +1,32 @@
 server:
-  port: 9003
+  port: 10003
 
 aphrodite:
   datasource:
     mysql:
-      jdbc-url: jdbc:mysql://localhost:3306/aphrodite_insurance?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      jdbc-url: jdbc:mysql://localhost:11002/aphrodite_insurance?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
       username: root
       password: 123456
       driver-class-name: com.mysql.cj.jdbc.Driver
     oracle:
-      jdbc-url: jdbc:oracle:thin:@localhost:1521/FREEPDB1 # 注意：Oracle 23ai 默认服务名通常是 FREE 或 FREEPDB1
-      username: system # 注意：通常不用 root，Oracle 默认管理用户是 system 或 sys
+      jdbc-url: jdbc:oracle:thin:@localhost:11001/APHRODITE_INSURANCE
+      username: INSURANCE_USER
       password: 123456
       driver-class-name: oracle.jdbc.OracleDriver
+
+mybatis-plus:
+  # Mapper XML 文件的位置
+  mapper-locations: classpath*:/mapper/**/*.xml
+  # 实体类扫描包路径
+  type-aliases-package: com.aphrodite.insurance.entity
+  # 处理器扫描包路径
+  type-handlers-package: com.aphrodite.insurance.common.handler
+  configuration:
+    # 开启驼峰命名转换（数据库下划线字段自动映射到 Java 实体类的驼峰属性）
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      eredar:
+        janus: DEBUG
