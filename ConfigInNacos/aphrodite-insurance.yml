@@ -30,3 +30,8 @@ logging:
     com:
       eredar:
         janus: DEBUG
+
+compare:
+  janus:
+    calculatePremium:
+      isOpen: true

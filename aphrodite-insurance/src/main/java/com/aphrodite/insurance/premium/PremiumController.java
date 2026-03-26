@@ -7,6 +7,7 @@ import com.aphrodite.insurance.common.datasource.DataSourceEnum;
 import com.aphrodite.insurance.premium.dto.PremiumCalculateReqDTO;
 import com.aphrodite.insurance.premium.dto.PremiumCalculateResDTO;
 import com.aphrodite.insurance.premium.service.PremiumService;
+import com.aphrodite.insurance.utils.ResponseUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,6 @@ public class PremiumController {
     @PostMapping("/calculatePremium")
     public ApiResponse<PremiumCalculateResDTO> calculatePremium(@Validated @RequestBody ApiRequest<PremiumCalculateReqDTO> request) {
         DataSourceContextHolder.setDataSource(DataSourceEnum.Oracle.getDb());
-        return ApiResponse.success(premiumService.calculatePremium(request));
+        return ResponseUtils.success("calculatePremium", premiumService.calculatePremium(request));
     }
 }
